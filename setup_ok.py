@@ -14,18 +14,10 @@ setuptools.setup(
     classifiers=[],
     python_requires=">=3.6",
     install_requires=[
-        "flask==2.0.0",
-        "numpy>=1.17.4",
-        "tensorflow>=1.15.2",
-        "opencv-python-headless",
-        "werkzeug==0.16.0",
-        "matplotlib==3.1.1",
-        "gunicorn==19.5.0",
-        "Pillow>=6.0.0",
-        "image",
-        "scipy",
-        "streamlit >= 0.63",
-        "PIL",
-        "st_on_hover_tabs"
+      tensorflow==2.4.0
+      numpy==1.19.4
+      streamlit==0.73.1
+      pandas==1.1.4
+      Pillow==8.2.0
     ],
 )
