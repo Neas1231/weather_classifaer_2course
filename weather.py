@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# coding: utf-8
 from PIL import Image
 import tensorflow as tf
 import streamlit as st
