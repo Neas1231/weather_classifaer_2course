@@ -36,7 +36,7 @@ if uploaded_file is not None:
     )
     preds = ResNet_model.predict(image)
     with st.sidebar:
-            tabs = on_hover_tabs(tabName=['Предсказание', 'Картинка', 'все вместе'], 
+            tabs = on_hover_tabs(tabName=['Предсказание', 'Картинка', 'Все вместе'], 
                               iconName=['dashboard', 'money', 'economy'],
                                  styles = {'navtab': {'background-color':'#111',
                                                       'color': '#818181',
@@ -57,7 +57,7 @@ if uploaded_file is not None:
         st.header(dictuar[preds.argmax()])         
     if  tabs =='Картинка':
         st.image(image_copy)
-    if tabs == 'Предсказание и картинка':
+    if tabs == 'Все вместе':
         st.header(dictuar[preds.argmax()]) 
         st.image(image_copy)
                 
