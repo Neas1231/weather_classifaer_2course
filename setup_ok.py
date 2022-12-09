@@ -1,5 +1,5 @@
 import setuptools
-pip install tensorflow==1.2.0 --ignore-installed
+
 
 setuptools.setup(
     name="streamlit-weather",
@@ -16,13 +16,13 @@ setuptools.setup(
     python_requires=">=3.6",
     install_requires=[
         "flask==2.0.0",
-        "numpy==1.17.4",
-        "tensorflow==1.15.2",
+        "numpy>=1.17.4",
+        "tensorflow>=1.15.2",
         "opencv-python-headless",
         "werkzeug==0.16.0",
         "matplotlib==3.1.1",
         "gunicorn==19.5.0",
-        "Pillow==6.0.0",
+        "Pillow>=6.0.0",
         "image",
         "scipy",
         "streamlit >= 0.63",
