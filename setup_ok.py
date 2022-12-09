@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name="streamlit-on-Hover-tabs",
+    name="streamlit-weather",
     version="0.0.2",
     author="",
     author_email="",
@@ -14,7 +14,7 @@ setuptools.setup(
     classifiers=[],
     python_requires=">=3.6",
     install_requires=[
-        "tensorflow",
+        "tensorflow >= 2.11.0",
         "streamlit >= 0.63",
         "PIL",
         "st_on_hover_tabs"
