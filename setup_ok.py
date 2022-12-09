@@ -14,7 +14,9 @@ setuptools.setup(
     classifiers=[],
     python_requires=">=3.6",
     install_requires=[
-        tensorflow.
+        "tensorflow",
         "streamlit >= 0.63",
+        "PIL",
+        "st_on_hover_tabs"
     ],
 )
