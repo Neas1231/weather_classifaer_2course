@@ -1,4 +1,5 @@
 import setuptools
+pip install tensorflow==1.2.0 --ignore-installed
 
 setuptools.setup(
     name="streamlit-weather",
