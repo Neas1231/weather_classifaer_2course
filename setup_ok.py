@@ -13,11 +13,6 @@ setuptools.setup(
     include_package_data=True,
     classifiers=[],
     python_requires=">=3.6",
-    install_requires=[
-      tensorflow==2.4.0
-      numpy==1.19.4
-      streamlit==0.73.1
-      pandas==1.1.4
-      Pillow==8.2.0
+    install_requires=
     ],
 )
