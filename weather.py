@@ -32,7 +32,7 @@ if uploaded_file is not None:
     )
     
     image = datagen.flow_from_directory(
-    'IMG.jpg',
+    '',
     target_size=(256, 256), #Target size
     batch_size=32,
     class_mode='categorical'
