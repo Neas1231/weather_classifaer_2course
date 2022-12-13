@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
+import os
 from PIL import Image
 import tensorflow as tf
 import streamlit as st
@@ -24,7 +25,7 @@ if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
     
     image = Image.open(uploaded_file)
-    image.save(r'images/IMG.jpg')
+    image.save(r'IMG.jpg')
     image_copy = image
     datagen= keras.preprocessing.image.ImageDataGenerator(
     validation_split=0.25, #Split 75% for train and 25% for validation/test
@@ -32,7 +33,7 @@ if uploaded_file is not None:
     )
     
     image = datagen.flow_from_directory(
-    'images',
+    f'{os.getcwd()}',
     target_size=(256, 256), #Target size
     batch_size=32,
     class_mode='categorical'
