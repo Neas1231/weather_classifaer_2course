@@ -23,7 +23,7 @@ if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
     
     image = Image.open(uploaded_file)
-    image.save(rf'{os.getcwd()}/images/img/IMG.jpg')
+    image.save(rf'{os.getcwd()}/images/img')
     image_copy = image
     datagen= keras.preprocessing.image.ImageDataGenerator(
     validation_split=0.25, #Split 75% for train and 25% for validation/test
