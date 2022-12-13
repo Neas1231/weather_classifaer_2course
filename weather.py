@@ -15,7 +15,8 @@ dictuar = {0:'dew' ,1:'fogsmog' ,2:'frost' ,3:'glaze' ,4:'hail' ,5:'lightning' ,
 
 st.header("Программа для классификации погодных условий ")
 st.markdown('<style>' + open('./style.css').read() + '</style>', unsafe_allow_html=True)
-ResNet_model = tf.keras.models.load_model(r'first_ResNet50V2_model')
+ResNet_model = tf.keras.models.load_model(r'first_ResNet50V2_model',compile=False)
+ResNet_model.compile()
 
 uploaded_file = st.file_uploader('Загрузите картинку погоды, которую попробует распознать нейросеть!') # Вместо этой приколюхи записать файл картинки в само веб приложение и через его файловую систему уже ввести изображение
 if uploaded_file is not None:
