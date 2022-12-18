@@ -21,8 +21,12 @@ ResNet_model.compile()
 uploaded_file = st.file_uploader('Загрузите картинку погоды, которую попробует распознать нейросеть!') # Вместо этой приколюхи записать файл картинки в само веб приложение и через его файловую систему уже ввести изображение
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
-    
-    image = Image.open(uploaded_file)
+
+    try:
+           image = Image.open(uploaded_file)
+    except PIL.UnidentifiedImageError:
+           st.write('Попробуйте снова, но с картинкой :(')
+
     image.save(rf'{os.getcwd()}/images/img/IMG.jpg')
     image_copy = image
     datagen= keras.preprocessing.image.ImageDataGenerator(
