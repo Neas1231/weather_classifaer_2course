@@ -59,11 +59,11 @@ if uploaded_file is not None:
                                  key="1")
                          
 
-     if tabs =='Предсказание':
+    if tabs =='Предсказание':
            st.header(dictuar[preds.argmax()])         
-     if  tabs =='Картинка':
+    if  tabs =='Картинка':
            st.image(image_copy)
-     if tabs == 'Все вместе':
+    if tabs == 'Все вместе':
            st.header(dictuar[preds.argmax()]) 
            st.image(image_copy)
         
