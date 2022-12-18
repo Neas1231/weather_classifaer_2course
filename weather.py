@@ -67,7 +67,7 @@ if uploaded_file is not None:
                       st.header(dictuar[preds.argmax()]) 
                       st.image(image_copy)
        
-     except pl.UnidentifiedImageError:
+    except pl.UnidentifiedImageError:
            st.write('Попробуйте снова, но с картинкой :(')           
         
         
