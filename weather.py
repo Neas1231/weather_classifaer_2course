@@ -24,7 +24,7 @@ if uploaded_file is not None:
 
     try:
            image = Image.open(uploaded_file)
-    except PIL.UnidentifiedImageError:
+    except UnidentifiedImageError:
            st.write('Попробуйте снова, но с картинкой :(')
 
     image.save(rf'{os.getcwd()}/images/img/IMG.jpg')
