@@ -60,12 +60,12 @@ if uploaded_file is not None:
                          
 
      if tabs =='Предсказание':
-                      st.header(dictuar[preds.argmax()])         
+           st.header(dictuar[preds.argmax()])         
      if  tabs =='Картинка':
-                      st.image(image_copy)
+           st.image(image_copy)
      if tabs == 'Все вместе':
-                      st.header(dictuar[preds.argmax()]) 
-                      st.image(image_copy)
+           st.header(dictuar[preds.argmax()]) 
+           st.image(image_copy)
         
    
     
