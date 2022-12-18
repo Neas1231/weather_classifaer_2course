@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 import os
+import PIL as pl
 from PIL import Image
 import tensorflow as tf
 import streamlit as st
@@ -24,7 +25,7 @@ if uploaded_file is not None:
 
     try:
            image = Image.open(uploaded_file)
-    except UnidentifiedImageError:
+    except pl.UnidentifiedImageError:
            st.write('Попробуйте снова, но с картинкой :(')
 
     image.save(rf'{os.getcwd()}/images/img/IMG.jpg')
