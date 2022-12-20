@@ -39,9 +39,7 @@ if uploaded_file is not None:
        target_size=(256, 256), 
        batch_size=32,
        class_mode='categorical'
-       ) 
-
-       arrow = Image.open('arrow.png')
+       )
        
        with st.spinner('Подождите...'):
               preds = ResNet_model.predict(image)
