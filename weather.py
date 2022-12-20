@@ -25,27 +25,23 @@ uploaded_file = st.file_uploader('Загрузите картинку погод
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
 
-
     image = Image.open(uploaded_file)
-    
-
     image.save(rf'{os.getcwd()}/images/img/IMG.jpg')
     image_copy = image
+
     datagen= keras.preprocessing.image.ImageDataGenerator(
-    validation_split=0.25, #Split 75% for train and 25% for validation/test
-    rescale=1./255 #Rescale the images
+    validation_split=0.25, 
+    rescale=1./255 
     )
     
     image = datagen.flow_from_directory(
     f'{os.getcwd()}',
-    target_size=(256, 256), #Target size
+    target_size=(256, 256), 
     batch_size=32,
     class_mode='categorical'
     )
     preds = ResNet_model.predict(image)
-    
-    st.header(dictuar[preds.argmax()])
-    
+    preds
     with st.sidebar:
                tabs = on_hover_tabs(tabName=['Предсказание', 'Картинка', 'Все вместе'], 
                iconName=['dashboard', 'money', 'economy'],
