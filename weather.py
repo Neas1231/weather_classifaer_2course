@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 import os
+import PIL as pl
 from PIL import Image
 import tensorflow as tf
 import streamlit as st
@@ -23,8 +24,11 @@ ResNet_model.compile()
 uploaded_file = st.file_uploader('Загрузите картинку погоды, которую попробует распознать нейросеть!') # Вместо этой приколюхи записать файл картинки в само веб приложение и через его файловую систему уже ввести изображение
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
-    
+
+
     image = Image.open(uploaded_file)
+    
+
     image.save(rf'{os.getcwd()}/images/img/IMG.jpg')
     image_copy = image
     datagen= keras.preprocessing.image.ImageDataGenerator(
@@ -43,32 +47,30 @@ if uploaded_file is not None:
     st.header(dictuar[preds.argmax()])
     
     with st.sidebar:
-            tabs = on_hover_tabs(tabName=['Предсказание', 'Картинка', 'Все вместе'], 
-                              iconName=['dashboard', 'money', 'economy'],
-                                 styles = {'navtab': {'background-color':'#111',
-                                                      'color': '#818181',
-                                                      'font-size': '18px',
-                                                      'transition': '.3s',
-                                                      'white-space': 'nowrap',
-                                                      'text-transform': 'uppercase'},
-                                           'iconStyle':{'position':'fixed',
-                                                        'left':'7.5px',
-                                                        'text-align': 'left'},
-                                           'tabStyle' : {'list-style-type': 'none',
-                                                         'margin-bottom': '30px',
-                                                         'padding-left': '30px'}},
+               tabs = on_hover_tabs(tabName=['Предсказание', 'Картинка', 'Все вместе'], 
+               iconName=['dashboard', 'money', 'economy'],
+               styles = {'navtab': {'background-color':'#111',
+                                           'color': '#818181',
+                                           'font-size': '18px',
+                                           'transition': '.3s',
+                                           'white-space': 'nowrap',
+                                           'text-transform': 'uppercase'},
+                         'iconStyle':{'position':'fixed',
+                                           'left':'7.5px',
+                                           'text-align': 'left'},
+                         'tabStyle' : {'list-style-type': 'none',
+                                            'margin-bottom': '30px',
+                                            'padding-left': '30px'}},
                                  key="1")
                          
 
     if tabs =='Предсказание':
-        st.header(dictuar[preds.argmax()])         
+           st.header(dictuar[preds.argmax()])         
     if  tabs =='Картинка':
-        st.image(image_copy)
+           st.image(image_copy)
     if tabs == 'Все вместе':
-        st.header(dictuar[preds.argmax()]) 
-        st.image(image_copy)
-                
-        
+           st.header(dictuar[preds.argmax()]) 
+           st.image(image_copy)
         
    
     
