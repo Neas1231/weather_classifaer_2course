@@ -39,11 +39,11 @@ if uploaded_file is not None:
        target_size=(256, 256), 
        batch_size=32,
        class_mode='categorical'
-       )
-       preds = ResNet_model.predict(image)
-    
-       st.text('Показать результат')
-       st.text('☚☚☚☚')
+       ) 
+
+       with st.spinner('Подождите...'):
+              preds = ResNet_model.predict(image)
+       st.success('Выполнено!')  
 
        with st.sidebar:
                tabs = on_hover_tabs(tabName=['Предсказание', 'Картинка', 'Все вместе'], 
