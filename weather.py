@@ -21,7 +21,7 @@ st.markdown('<style>' + open('./style.css').read() + '</style>', unsafe_allow_ht
 ResNet_model = tf.keras.models.load_model(r'first_ResNet50V2_model',compile=False)
 ResNet_model.compile()
 
-uploaded_file = st.file_uploader('Загрузите картинку погоды, которую попробует распознать нейросеть!') # Вместо этой приколюхи записать файл картинки в само веб приложение и через его файловую систему уже ввести изображение
+uploaded_file = st.file_uploader('Загрузите картинку погоды, которую попробует распознать нейросеть!')
 if uploaded_file is not None:
        bytes_data = uploaded_file.getvalue()
 
