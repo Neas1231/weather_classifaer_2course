@@ -23,26 +23,29 @@ ResNet_model.compile()
 
 uploaded_file = st.file_uploader('Загрузите картинку погоды, которую попробует распознать нейросеть!') # Вместо этой приколюхи записать файл картинки в само веб приложение и через его файловую систему уже ввести изображение
 if uploaded_file is not None:
-    bytes_data = uploaded_file.getvalue()
+       bytes_data = uploaded_file.getvalue()
 
-    image = Image.open(uploaded_file)
-    image.save(rf'{os.getcwd()}/images/img/IMG.jpg')
-    image_copy = image
+       image = Image.open(uploaded_file)
+       image.save(rf'{os.getcwd()}/images/img/IMG.jpg')
+       image_copy = image
 
-    datagen= keras.preprocessing.image.ImageDataGenerator(
-    validation_split=0.25, 
-    rescale=1./255 
-    )
+       datagen= keras.preprocessing.image.ImageDataGenerator(
+       validation_split=0.25, 
+       rescale=1./255 
+       )
     
-    image = datagen.flow_from_directory(
-    f'{os.getcwd()}',
-    target_size=(256, 256), 
-    batch_size=32,
-    class_mode='categorical'
-    )
-    preds = ResNet_model.predict(image)
+       image = datagen.flow_from_directory(
+       f'{os.getcwd()}',
+       target_size=(256, 256), 
+       batch_size=32,
+       class_mode='categorical'
+       )
+       preds = ResNet_model.predict(image)
+    
+       st.text('Показать результат')
+       st.text('☚☚☚☚')
 
-    with st.sidebar:
+       with st.sidebar:
                tabs = on_hover_tabs(tabName=['Предсказание', 'Картинка', 'Все вместе'], 
                iconName=['dashboard', 'money', 'economy'],
                styles = {'navtab': {'background-color':'#111',
@@ -60,11 +63,11 @@ if uploaded_file is not None:
                                  key="1")
                          
 
-    if tabs =='Предсказание':
+       if tabs =='Предсказание':
            st.header(dictuar[preds.argmax()])         
-    if  tabs =='Картинка':
+       if  tabs =='Картинка':
            st.image(image_copy)
-    if tabs == 'Все вместе':
+       if tabs == 'Все вместе':
            st.header(dictuar[preds.argmax()]) 
            st.image(image_copy)
         
