@@ -41,9 +41,11 @@ if uploaded_file is not None:
        class_mode='categorical'
        ) 
 
+       arrow = Image.open('arrow.png')
+       
        with st.spinner('Подождите...'):
               preds = ResNet_model.predict(image)
-       st.success('Выполнено! Посмотреть результат ☚')
+       st.success(f'Посмотреть результат\n {arrow}')
 
        with st.sidebar:
                tabs = on_hover_tabs(tabName=['Предсказание', 'Картинка', 'Все вместе'], 
