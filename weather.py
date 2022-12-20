@@ -43,9 +43,7 @@ if uploaded_file is not None:
 
        with st.spinner('Подождите...'):
               preds = ResNet_model.predict(image)
-       st.success('Выполнено!')
-
-       st.write(dictuar[preds.argmax()])  
+       st.success('Выполнено! Посмотреть результат ☚')
 
        with st.sidebar:
                tabs = on_hover_tabs(tabName=['Предсказание', 'Картинка', 'Все вместе'], 
