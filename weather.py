@@ -41,7 +41,7 @@ if uploaded_file is not None:
     class_mode='categorical'
     )
     preds = ResNet_model.predict(image)
-    preds
+
     with st.sidebar:
                tabs = on_hover_tabs(tabName=['Предсказание', 'Картинка', 'Все вместе'], 
                iconName=['dashboard', 'money', 'economy'],
