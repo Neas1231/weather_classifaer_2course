@@ -23,7 +23,7 @@ ResNet_model.compile()
 
 uploaded_file = st.file_uploader('Загрузите картинку погоды, которую попробует распознать нейросеть!')
 if uploaded_file is not None:
-    
+
        bytes_data = uploaded_file.getvalue()
 
        image = Image.open(uploaded_file)
