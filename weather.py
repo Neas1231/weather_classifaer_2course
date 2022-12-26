@@ -23,6 +23,7 @@ ResNet_model.compile()
 
 uploaded_file = st.file_uploader('Загрузите картинку погоды, которую попробует распознать нейросеть!')
 if uploaded_file is not None:
+    
        bytes_data = uploaded_file.getvalue()
 
        image = Image.open(uploaded_file)
@@ -40,10 +41,8 @@ if uploaded_file is not None:
        batch_size=32,
        class_mode='categorical'
        )
-       
-       with st.spinner('Подождите...'):
-              preds = ResNet_model.predict(image)
-       st.success('Выполнено!{}')
+
+       preds = ResNet_model.predict(image)
 
        if st.button('Показать результат'):
             st.write(dictuar[preds.argmax()])
